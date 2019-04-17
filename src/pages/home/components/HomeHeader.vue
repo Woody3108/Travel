@@ -1,7 +1,7 @@
 <template>
     <div class="header">
         <div class="header-left">返回</div>
-        <div class="header-input"></div>
+        <div class="header-input">输入城市/景点</div>
         <div class="header-right">城市</div>
     </div>
 </template>
@@ -13,33 +13,32 @@
 </script>
 
 <style scoped>
-    * {
-        margin: 0px;
-        padding: 0px;
+    .header {
+         display: flex;
+         line-height: .86rem;
+         color: #ffffff;
+         background: #25a4bb;
+         text-align: center;
     }
-    body {
-        width: 100%;
-    }
-     .header {
-        display: flex;
-        line-height: .86rem;
-        color: #ffffff;
-        background: #25a4bb;
-    }
+
     .header-left {
-        width: 1.64rem;
+        width: .64rem;
         float: left;
     }
+
     .header-input {
         flex: 1;
-        margin-top: .12rem ;
-        margin-bottom: .12rem ;
+        margin-top: .12rem;
+        margin-bottom: .12rem;
         line-height: .64rem;
+        color: #cccccc;
         background: #ffffff;
         border-radius: .1rem;
     }
+
     .header-right {
         width: 1.24rem;
         float: right;
+        /*text-align: center;*/
     }
 </style>

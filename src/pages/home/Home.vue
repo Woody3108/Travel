@@ -16,13 +16,4 @@
 </script>
 
 <style scoped>
-    * {
-        margin: 0px;
-        padding: 0px;
-    }
-    body {
-        width: 100%;
-        margin: 0px;
-        padding: 0px;
-    }
 </style>
