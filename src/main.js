@@ -9,6 +9,8 @@ import fastClick from 'fastClick'
 import './assets/styles/reset.css'
 // 解决移动端一像素边框
 import './assets/styles/border.css'
+// 引入 icon 阿里图标
+import './assets/styles/iconfont.css'
 
 Vue.config.productionTip = false
 fastClick.attach(document.body)
