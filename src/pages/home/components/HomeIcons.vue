@@ -21,7 +21,7 @@ export default {
             iconList: [{
                 id: '001',
                 imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-                text: '景点门票哈哈哈哈哈'
+                text: '景点门票字符过多点点点的效果'
             }, {
                 id: '002',
                 imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
