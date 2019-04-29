@@ -2,7 +2,7 @@
 <div>
     <div class="title">热销推荐</div>
     <ul>
-        <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+        <li class="item border-bottom" v-for="item of list" :key="item.id">
             <img class="item-img" :src="item.imgUrl">
             <div class="item-info">
                 <p class="item-title">{{ item.title }}</p>
@@ -17,24 +17,27 @@
 <script>
 export default {
     name: 'HomeRecommend',
+    props: {
+        list: Array
+    },
     data () {
         return {
-            recommendList: [{
-                id: '001',
-                imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
-                title: '北京故宫',
-                desc: '故宫详细介绍故宫详细介绍故宫详细介绍故宫详细介绍故宫详细介绍故宫详细介绍'
-            }, {
-                id: '002',
-                imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
-                title: '北京故宫',
-                desc: '故宫详细介绍'
-            }, {
-                id: '003',
-                imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
-                title: '北京故宫',
-                desc: '故宫详细介绍'
-            }]
+            // recommendList: [{
+            //     id: '001',
+            //     imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
+            //     title: '北京故宫',
+            //     desc: '故宫详细介绍故宫详细介绍故宫详细介绍故宫详细介绍故宫详细介绍故宫详细介绍'
+            // }, {
+            //     id: '002',
+            //     imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
+            //     title: '北京故宫',
+            //     desc: '故宫详细介绍'
+            // }, {
+            //     id: '003',
+            //     imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
+            //     title: '北京故宫',
+            //     desc: '故宫详细介绍'
+            // }]
         }
     }
 }
@@ -42,7 +45,6 @@ export default {
 
 <style scoped>
     .title {
-        margin-top: .2rem;
         line-height: .8rem;
         background: #eee;
         text-indent: .2rem;
