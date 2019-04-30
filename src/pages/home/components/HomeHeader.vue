@@ -1,16 +1,20 @@
 <template>
     <div class="header">
         <div class="header-left">
+            <!-- 返回按钮 -->
             <div class="iconfont back-icon">&#xe624;</div>
         </div>
         <div class="header-input">
             <span class="iconfont">&#xe632;</span>
             输入城市/景点
         </div>
-        <div class="header-right">
-            {{ this.city}}
-            <span class="iconfont arrow-icon">&#xe8ec;</span>
-        </div>
+        <!-- 配置路由跳转到城市页 -->
+        <router-link to="/city">
+            <div class="header-right">
+                {{ this.city}}
+                <span class="iconfont arrow-icon">&#xe8ec;</span>
+            </div>
+        </router-link>
     </div>
 </template>
 
@@ -56,6 +60,7 @@
         width: 1.24rem;
         float: right;
         text-align: center;
+        color: white;
     }
     .arrow-icon {
         margin-left: -.04rem;
