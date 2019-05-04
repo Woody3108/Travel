@@ -9,12 +9,12 @@
 </template>
 
 <script>
-import HomeHeader from './components/HomeHeader'
-import HomeSwiper from './components/HomeSwiper'
-import HomeIcons from './components/HomeIcons'
-import HomeRecommend from './components/HomeRecommend'
-import HomeWeekend from './components/HomeWeekend'
-import axios from 'axios'
+    import HomeHeader from './components/HomeHeader'
+    import HomeSwiper from './components/HomeSwiper'
+    import HomeIcons from './components/HomeIcons'
+    import HomeRecommend from './components/HomeRecommend'
+    import HomeWeekend from './components/HomeWeekend'
+    import axios from 'axios'
 
     export default {
         name: 'Home',
@@ -25,7 +25,7 @@ import axios from 'axios'
             HomeRecommend,
             HomeWeekend
         },
-        data () {
+        data() {
             return {
                 city: '',
                 swiperList: [],
@@ -35,11 +35,11 @@ import axios from 'axios'
             }
         },
         methods: {
-            getHomeInfo () {
+            getHomeInfo() {
                 axios.get('/api/index.json')
                     .then(this.getHomeInfoSucc)
             },
-            getHomeInfoSucc (res) {
+            getHomeInfoSucc(res) {
                 res = res.data
                 if (res.ret && res.data) {
                     const data = res.data
@@ -52,7 +52,7 @@ import axios from 'axios'
                 console.log(res)
             }
         },
-        mounted () {
+        mounted() {
             this.getHomeInfo()
         }
     }

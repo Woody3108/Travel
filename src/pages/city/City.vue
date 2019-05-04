@@ -1,16 +1,21 @@
 <template>
-    <CityHeader>city</CityHeader>
-
+    <div>
+        <CityHeader>city</CityHeader>
+        <CitySearch></CitySearch>
+    </div>
 </template>
 
 <script>
-import CityHeader from './components/CityHeader'
-export default {
-    name: 'City',
-    components: {
-        CityHeader
+    import CityHeader from './components/CityHeader'
+    import CitySearch from './components/CitySearch'
+
+    export default {
+        name: 'City',
+        components: {
+            CityHeader,
+            CitySearch
+        }
     }
-}
 </script>
 
 <style scoped>
