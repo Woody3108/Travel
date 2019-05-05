@@ -30,7 +30,7 @@
 
 <style scoped>
     /*在CSS中引入另一个CSS，前面要加波浪号 ~*/
-    /*@import "../../../assets/styles/varibles.styl";*/
+    /*@import "../../../assets/styles/variables.styl";*/
     .header {
          display: flex;
          line-height: .86rem;

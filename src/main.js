@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 // 移动端点击延迟
-import fastClick from 'fastClick'
+import fastClick from 'fastclick'
 // 清除默认CSS样式
 import './assets/styles/reset.css'
 // 解决移动端一像素边框

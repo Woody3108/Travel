@@ -81,7 +81,6 @@
     }
     .item-desc {
         line-height: .4rem;
-        color: #ccc;
         /* 字符过多点点点...的效果 */
         overflow: hidden;
         white-space: nowrap;
