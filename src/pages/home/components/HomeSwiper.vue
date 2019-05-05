@@ -16,7 +16,7 @@
         props: {
             list: Array
         },
-        data() {
+        data () {
             return {
                 swiperOption: {
                     pagination: '.swiper-pagination',
@@ -37,11 +37,11 @@
         computed: {
             // 解决首次进入页面时候，list为空就开始渲染数据
             // 让真正的数据加载后再开始渲染 swiper
-            showSwiper() {
+            showSwiper () {
                 return this.list.length
             }
         },
-        mounted() {
+        mounted () {
             setInterval(() => {
                 // console.log('simulate async data')
                 if (this.list.length < 3) {
@@ -57,7 +57,7 @@
         background: #fff;
     }
 
-    /* 解决屏幕抖动*/
+    /* 解决屏幕抖动 */
     .swiper {
         width: 100%;
         height: 0;

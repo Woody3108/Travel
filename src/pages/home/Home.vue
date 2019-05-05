@@ -25,7 +25,7 @@
             HomeRecommend,
             HomeWeekend
         },
-        data() {
+        data () {
             return {
                 city: '',
                 swiperList: [],
@@ -35,11 +35,11 @@
             }
         },
         methods: {
-            getHomeInfo() {
+            getHomeInfo () {
                 axios.get('/api/index.json')
                     .then(this.getHomeInfoSucc)
             },
-            getHomeInfoSucc(res) {
+            getHomeInfoSucc (res) {
                 res = res.data
                 if (res.ret && res.data) {
                     const data = res.data
@@ -52,7 +52,7 @@
                 console.log(res)
             }
         },
-        mounted() {
+        mounted () {
             this.getHomeInfo()
         }
     }
