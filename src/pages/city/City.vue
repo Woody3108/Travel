@@ -2,8 +2,17 @@
     <div>
         <CityHeader>city</CityHeader>
         <CitySearch></CitySearch>
-        <CityList :cities="cities" :hot="hotCities"></CityList>
-        <CityAlphabet :cities="cities"></CityAlphabet>
+        <CityList
+            :cities="cities"
+            :hot="hotCities"
+            :letter="letter"
+        >
+        </CityList>
+        <CityAlphabet
+            :cities="cities"
+            @change="handleLetterChange"
+        >
+        </CityAlphabet>
     </div>
 </template>
 
@@ -25,7 +34,8 @@
         data () {
             return {
                 cities: {},
-                hotCities: []
+                hotCities: [],
+                letter: ''
             }
         },
         methods: {
@@ -45,6 +55,11 @@
                     // console.log('cities', this.cities)
                     // console.log('hotCities', this.hotCities)
                 }
+            },
+            handleLetterChange (letter) {
+                console.log('letter', letter)
+                // 父组件City.vue传值给子组件CityList.vue ： 通过属性的形式
+                this.letter = letter
             }
         },
         mounted () {

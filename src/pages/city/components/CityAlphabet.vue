@@ -1,6 +1,16 @@
 <template>
     <ul class="list">
-        <li class="item" v-for="(item,key) of cities" :key="key">{{ key }}</li>
+        <li
+            class="item"
+            v-for="(item, key) of cities"
+            :key="key"
+            @click="handleLetterClick"
+            @touchstart="handleTouchStart"
+            @touchmove="handleTouchMove"
+            @touchend="handleTouchEnd"
+        >
+            {{ key }}
+        </li>
     </ul>
 </template>
 
@@ -9,6 +19,28 @@
         name: 'CityAlphabet',
         props: {
             cities: Object
+        },
+        data () {
+          return {
+              touchStatus: false
+          }
+        },
+        methods: {
+            handleLetterClick (e) {
+                const log = console.log.bind(console)
+                log('当前点击字母', e.target.innerText)
+                // 子组件 CityAlphabet 传值给父组件 City.vue
+                this.$emit('change', e.target.innerText)
+            },
+            handleTouchStart () {
+
+            },
+            handleTouchMove () {
+
+            },
+            handleTouchEnd () {
+
+            }
         }
     }
 </script>
