@@ -40,10 +40,12 @@
                     .then(this.getHomeInfoSucc)
             },
             getHomeInfoSucc (res) {
+                const log = console.log.bind(console)
                 res = res.data
                 if (res.ret && res.data) {
                     const data = res.data
                     this.city = data.city
+                    log('当前城市：', this.city)
                     this.swiperList = data.swiperList
                     this.iconList = data.iconList
                     this.recommendList = data.recommendList
