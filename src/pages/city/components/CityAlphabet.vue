@@ -23,8 +23,15 @@
         },
         data () {
           return {
-              touchStatus: false
+              touchStatus: false,
+              startY: 0,
+              // 函数节流
+              timer: null
           }
+        },
+        update () {
+            // 优化性能
+            this.startY = this.$refs['A'][0].offsetTop
         },
         computed: {
             letters () {
@@ -48,15 +55,21 @@
             handleTouchMove (e) {
                 if (this.touchStatus) {
                     // offsetTop 拿到元素距顶端的高度
-                    let startY = this.$refs['A'][0].offsetTop
-                    let touchY = e.touches[0].clientY - 79
-                    let index = Math.floor((touchY - startY) / 20)
-                    console.log('startY', startY)
-                    console.log('touchY', touchY)
-                    console.log('index', index)
-                    let l = this.letters
-                    if (index >= 0 && index <= l.length) {
-                        this.$emit('change', l[index])
+                    // let startY = this.$refs['A'][0].offsetTop
+                    if (this.timer) {
+                        clearTimeout(this.timer)
+                    } else {
+                        this.timer = setTimeout(() => {
+                            let touchY = e.touches[0].clientY - 79
+                            let index = Math.floor((touchY - this.startY) / 20)
+                            console.log('startY', this.startY)
+                            console.log('touchY', touchY)
+                            console.log('index', index)
+                            let l = this.letters
+                            if (index >= 0 && index <= l.length) {
+                                this.$emit('change', l[index])
+                            }
+                        }, 16)
                     }
                 }
             },
