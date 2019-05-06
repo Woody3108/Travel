@@ -1,8 +1,15 @@
 <template>
     <div class="icons">
         <swiper class="swiper-container" :options="swiperOption">
-            <swiper-slide v-for="(page, index) of pages" :key="index">
-                <div class="icon"  v-for="item of page" :key="item.id">
+            <swiper-slide
+                v-for="(page, index) of pages"
+                :key="index"
+            >
+                <div
+                    class="icon"
+                     v-for="item of page"
+                     :key="item.id"
+                >
                     <div class="icon-img">
                         <img class="icon-img-content" :src=item.imgUrl alt="">
                     </div>
@@ -24,43 +31,6 @@ export default {
             swiperOption: {
                 autoplay: false
             }
-            // iconList: [{
-            //     id: '001',
-            //     imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-            //     text: '景点门票字符过多点点点的效果'
-            // }, {
-            //     id: '002',
-            //     imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-            //     text: '景点门票'
-            // }, {
-            //     id: '003',
-            //     imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-            //     text: '景点门票'
-            // }, {
-            //     id: '004',
-            //     imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-            //     text: '景点门票'
-            // }, {
-            //     id: '005',
-            //     imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-            //     text: '景点门票'
-            // }, {
-            //     id: '006',
-            //     imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-            //     text: '景点门票'
-            // }, {
-            //     id: '007',
-            //     imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-            //     text: '景点门票'
-            // }, {
-            //     id: '008',
-            //     imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-            //     text: '景点门票'
-            // }, {
-            //     id: '009',
-            //     imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-            //     text: '景点门票'
-            // }]
         }
     },
     computed: {
@@ -82,9 +52,6 @@ export default {
 <style scoped>
 .icons {
     overflow: hidden;
-    /*height: 0;*/
-    /*padding-bottom: 50%;*/
-    /*background: darkcyan;*/
 }
 .icons >>> .swiper-container {
     height: 0;

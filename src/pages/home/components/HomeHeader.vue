@@ -11,7 +11,7 @@
         <!-- 配置路由跳转到城市页 -->
         <router-link to="/city">
             <div class="header-right">
-                {{ this.city}}
+                {{ this.city }}
                 <span class="iconfont arrow-icon">&#xe8ec;</span>
             </div>
         </router-link>

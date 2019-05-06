@@ -15,7 +15,8 @@
                     <div
                         class="button-wrapper"
                         v-for="item of hot"
-                        :key="item.id">
+                        :key="item.id"
+                    >
                         <div class="button">
                             {{ item.name }}
                         </div>

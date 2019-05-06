@@ -1,8 +1,14 @@
 <template>
     <div class="swiper">
-        <swiper :options="swiperOption" v-if="showSwiper">
+        <swiper
+            :options="swiperOption"
+            v-if="showSwiper"
+        >
             <!-- slides -->
-            <swiper-slide v-for="item of list" :key="item.id">
+            <swiper-slide
+                v-for="item of list"
+                :key="item.id"
+            >
                 <img class="swiper-img" :src="item.imgUrl">
             </swiper-slide>
             <!-- Optional controls -->
@@ -22,16 +28,6 @@
                     pagination: '.swiper-pagination',
                     loop: true
                 }
-                // swiperList: [{
-                //     id: '001',
-                //     imgUrl: 'https://img1.qunarzz.com/vc/bf/9d/a3/67b7b37511fa26a78298bf1da1.jpg'
-                // }, {
-                //     id: '002',
-                //     imgUrl: 'https://img1.qunarzz.com/vc/80/80/1a/72b8f423c33e581ca72fc136da.jpg'
-                // }, {
-                //     id: '003',
-                //     imgUrl: 'https://img1.qunarzz.com/vc/b8/25/51/f6173dbd12c1a0f783abe73855.jpg'
-                // }]
             }
         },
         computed: {
