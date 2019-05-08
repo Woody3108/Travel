@@ -29,7 +29,7 @@
               timer: null
           }
         },
-        update () {
+        updated () {
             // 优化性能
             this.startY = this.$refs['A'][0].offsetTop
         },
