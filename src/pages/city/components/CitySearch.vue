@@ -5,12 +5,17 @@
                 class="search-input"
                 type="text"
                 placeholder="请输入城市名或拼音"
-                v-model="keword"
+                v-model="keyword"
             >
         </div>
         <div class="search-content">
             <ul>
-                <li>123456</li>
+                <li
+                    v-for="item of list"
+                    :key="item.id"
+                >
+                    {{ item.name }}
+                </li>
             </ul>
         </div>
     </div>
@@ -24,7 +29,7 @@
         },
         data () {
             return {
-                keword: '',
+                keyword: '',
                 list: [],
                 timer: null
             }
@@ -32,7 +37,27 @@
         // 侦听器
         watch: {
             keyword () {
-
+                const log = console.log.bind(console)
+                if (this.timer) {
+                    clearTimeout(this.timer)
+                }
+                if (!this.keyword) {
+                    this.list = []
+                    return
+                }
+                this.timer = setTimeout(() => {
+                    const result = []
+                    for (let i in this.cities) {
+                        this.cities[i].forEach((value) => {
+                            if (value.spell.indexOf(this.keyword) > -1 || value.name.indexOf(this.keyword) > -1) {
+                                result.push(value)
+                                log('this.keyword', this.keyword)
+                                log('搜索的结果--->', value)
+                            }
+                        })
+                    }
+                    this.list = result
+                }, 100)
             }
         }
     }

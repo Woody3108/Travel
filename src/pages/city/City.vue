@@ -47,16 +47,23 @@
                     .then(this.handleGetCityInfoSucc)
             },
             handleGetCityInfoSucc (res) {
-                let r = res.data
-                // ret 表示数据请求是否成功；布尔值；
-                if (r.ret && r.data) {
-                    // console.log('r.ret', r.ret)
-                    let data = r.data
-                    // console.log('data', data)
+                // let r = res.data
+                // // ret 表示数据请求是否成功；布尔值；
+                // if (r.ret && r.data) {
+                //     // console.log('r.ret', r.ret)
+                //     let data = r.data
+                //     this.cities = data.cities
+                //     console.log('this.cities', this.cities)
+                //     this.hotCities = data.hotCities
+                //     // console.log('cities', this.cities)
+                //     // console.log('hotCities', this.hotCities)
+                // }
+                res = res.data
+                if (res.ret && res.data) {
+                    const data = res.data
                     this.cities = data.cities
                     this.hotCities = data.hotCities
-                    // console.log('cities', this.cities)
-                    // console.log('hotCities', this.hotCities)
+                    console.log('cities', this.cities)
                 }
             },
             handleLetterChange (letter) {
