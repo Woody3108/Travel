@@ -29,7 +29,7 @@
               timer: null
           }
         },
-        update () {
+        updated () {
             // 优化性能
             this.startY = this.$refs['A'][0].offsetTop
         },
@@ -56,21 +56,27 @@
                 if (this.touchStatus) {
                     // offsetTop 拿到元素距顶端的高度
                     // let startY = this.$refs['A'][0].offsetTop
+                    // 函数节流
                     if (this.timer) {
                         clearTimeout(this.timer)
-                    } else {
-                        this.timer = setTimeout(() => {
-                            let touchY = e.touches[0].clientY - 79
-                            let index = Math.floor((touchY - this.startY) / 20)
-                            console.log('startY', this.startY)
-                            console.log('touchY', touchY)
-                            console.log('index', index)
-                            let l = this.letters
-                            if (index >= 0 && index <= l.length) {
-                                this.$emit('change', l[index])
-                            }
-                        }, 16)
                     }
+                    this.timer = setTimeout(() => {
+                        let touchY = e.touches[0].clientY - 79
+                        let index = Math.floor((touchY - this.startY) / 20)
+                        console.log('startY', this.startY)
+                        console.log('touchY', touchY)
+                        console.log('index', index)
+                        let l = this.letters
+                        if (index >= 0 && index <= l.length) {
+                            this.$emit('change', l[index])
+                        }
+                    }, 16)
+                    // let touchY = e.touches[0].clientY - 79
+                    // let index = Math.floor((touchY - this.startY) / 20)
+                    // let l = this.letters
+                    //     if (index >= 0 && index <= l.length) {
+                    //         this.$emit('change', l[index])
+                    //     }
                 }
             },
             handleTouchEnd () {
